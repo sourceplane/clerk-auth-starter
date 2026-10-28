@@ -1,0 +1,31 @@
+# The epic's declaration. metadata.name equals the directory name; metadata.key
+# is the task-key prefix this epic reserves (CK → CK-1, CK-2, …). Owner, target
+# date and health are the platform's — never written here.
+apiVersion: orun.io/v1
+kind: Epic
+metadata:
+  name: clerk-auth-starter
+  key: CK
+spec:
+  title: "Vercel's Clerk Authentication Starter on Cloudflare Workers"
+  summary: "Clerk's Next.js auth starter — Clerk's prebuilt sign-in and sign-up, its middleware, a protected dashboard and a protected API route — runs on Cloudflare Workers + Static Assets through @opennextjs/cloudflare, with Clerk's keys as Orun secrets and a site that serves before they exist, inside the Cirrus baseline's repository conventions, and becomes an Orun baseline that takes a new site from nothing to live on stage and prod in one landing."
+  state: started
+  milestones:
+    - name: "CK0 — the spec"
+      exitCriteria:
+        - "the repository is born with its intent, CI, tooling and spec index, and this doc set and the task contracts are on main"
+      tasks: [CK-1]
+    - name: "CK1 — the auth starter on Workers"
+      exitCriteria:
+        - "apps/web is the upstream template, built by OpenNext into one Worker with Static Assets, Clerk's middleware running in it"
+        - "with no Clerk keys every page renders a connect-Clerk notice and nothing throws; with both, the template is unchanged"
+        - "Clerk's secret key is in no bundle: the deploy hands it to the Worker as a Worker secret"
+        - "`pnpm typecheck`, `pnpm lint`, `pnpm test` and `pnpm build` are green, and the Worker fits Workers Free"
+        - "the README says how to run, test, preview and deploy it, how to connect Clerk, and how every Vercel piece maps to Cloudflare"
+      tasks: [CK-2]
+    - name: "CK2 — a baseline"
+      exitCriteria:
+        - "blueprint.yaml (the console card) and repo-blueprint.yaml (the build) take a new site from nothing to live on stage and prod in one landing, then record it"
+        - "a site built from it carries the site only, renamed throughout to its own name, repository and Worker, with the template's credit intact"
+        - "Baseline CI is green: contract tests, generated component docs, the blueprint read by the pinned orun, the leak gate, the offline bootstrap and the end-to-end tier, without Clerk and with it"
+      tasks: [CK-3]

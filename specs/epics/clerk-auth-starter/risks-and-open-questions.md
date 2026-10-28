@@ -1,0 +1,12 @@
+# clerk-auth-starter — risks and open questions
+
+| ID | Risk | State | Notes |
+|---|---|---|---|
+| CK-A | `baseline-v1` is not yet proven live | OPEN | Proven offline in Baseline CI: the offline bootstrap with the blueprint's own hooks, the stage lane's own steps in a staged job tree, the site served by `wrangler dev` and smoke-tested with the component's own command — without Clerk, and with made-up keys. A console bootstrap closes it |
+| CK-B | A real sign-in on the Worker | OPEN | Offline, Clerk's middleware answers signed-out requests without the network, `/dashboard` redirects to `/sign-in` and `/api/protected` refuses; a signed-in request verifies its session token against Clerk's keys over the network, which no offline test can do. The first `wrangler secret bulk` on a Worker that does not exist yet (a first connected deploy) has not run live either; subscription-payments pushes its secret the same way. Closed by storing a development instance's keys on a live site and signing in once |
+| CK-C | Clerk's UI from its CDN | ACCEPTED | Without the `ui` prop, `<ClerkProvider>` loads Clerk's components from Clerk's CDN — Clerk's default, the same components and appearance. Bundled (`ui={ui}`), the Worker is 3.36 MiB gzipped and Workers Free stops at 3 MiB. A site on Workers Paid can pass `ui` back |
+| CK-D | Next 16.3.8, not 16.4.2 | ACCEPTED | Every OpenNext starter here is proven on 16.3.8; the template uses nothing 16.4 adds once Cache Components are off |
+| CK-E | Node.js middleware on Cloudflare | WATCH | Next 16's `proxy.ts` is Node.js middleware, which OpenNext bundles and calls experimental on Cloudflare. Every e2e serves it (Clerk's `x-clerk-auth-status` header is checked) |
+| CK-F | The upstream repository carries no LICENSE file | ACCEPTED | It is the template Vercel's "Clerk Authentication Starter" clones into a new repository for anyone who deploys it; the README credits it by name and link |
+| CK-G | The template's 48-hour `minimumReleaseAge` | ACCEPTED | It needs pnpm ≥ 10.16 and the workspace pins 10.12.1 (the composition's); the lockfile holds `@clerk/nextjs` 7.9.20 and `@clerk/ui` 1.41.2, each older than 48 hours when locked, and `--frozen-lockfile` keeps every install on them |
+| CK-H | A Clerk production instance needs a domain | ACCEPTED | Clerk production instances ask for DNS records on a domain the owner holds; workers.dev is not one. A development instance's keys work on workers.dev; the README sends production keys after the custom domain |
