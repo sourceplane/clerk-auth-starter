@@ -4,7 +4,7 @@
 |---|---|---|
 | CK0 — the spec | ✅ | the repository's first commit |
 | CK1 — the auth starter on Workers | ✅ | CK-2 |
-| CK2 — a baseline | planned | CK-3 |
+| CK2 — a baseline | ✅ | CK-3, tagged `baseline-v1` |
 
 ## Departures from the upstream template
 
