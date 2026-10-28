@@ -9,7 +9,7 @@ metadata:
 spec:
   title: "Vercel's Clerk Authentication Starter on Cloudflare Workers"
   summary: "Clerk's Next.js auth starter — Clerk's prebuilt sign-in and sign-up, its middleware, a protected dashboard and a protected API route — runs on Cloudflare Workers + Static Assets through @opennextjs/cloudflare, with Clerk's keys as Orun secrets and a site that serves before they exist, inside the Cirrus baseline's repository conventions, and becomes an Orun baseline that takes a new site from nothing to live on stage and prod in one landing."
-  state: started
+  state: completed
   milestones:
     - name: "CK0 — the spec"
       exitCriteria:

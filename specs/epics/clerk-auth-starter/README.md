@@ -8,7 +8,7 @@ baseline that makes a copy of it somebody else's in one landing.**
 
 | | |
 |---|---|
-| Status | In progress — CK1 on main: the site runs on Workers |
+| Status | ✅ Shipped (`baseline-v1`) — proven offline in Baseline CI; not yet live (risk CK-A) |
 | Upstream | [clerk/nextjs-auth-starter-template](https://github.com/clerk/nextjs-auth-starter-template), at `9e5619c` (2026-10-23) |
 | Reference | [portfolio-starter-kit](https://github.com/sourceplane/portfolio-starter-kit) — the same scaffolding, tests and bootstrap; [cms-sanity](https://github.com/sourceplane/cms-sanity) — a SaaS's keys as optional Orun secrets; [subscription-payments](https://github.com/sourceplane/subscription-payments) — a secret handed to the Worker by the deploy |
 | Key | `CK` |
