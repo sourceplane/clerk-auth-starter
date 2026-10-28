@@ -1,0 +1,20 @@
+apiVersion: orun.io/v1
+kind: TaskContract
+metadata:
+  name: CK-2
+  title: "The auth starter on Workers"
+spec:
+  goal: Clerk's Next.js auth starter runs on Cloudflare Workers + Static Assets through OpenNext, serves before Clerk is connected, keeps Clerk's secret key out of every bundle, and has its tests and a README that says how it maps to Vercel
+  affects:
+    - apps/web
+    - tests/web
+    - tooling/wire
+    - pnpm-lock.yaml
+    - pnpm-workspace.yaml
+    - README.md
+    - .gitignore
+  doneWhen:
+    - pnpm typecheck, lint, test and build are green
+    - wrangler dev serves every route the template has, without Clerk's keys and with them
+    - the Worker is under Workers Free's 3 MiB gzipped
+  gates: []
