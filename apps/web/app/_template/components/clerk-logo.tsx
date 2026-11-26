@@ -1,7 +1,7 @@
 export function ClerkLogo() {
   return (
     <a
-      href="https://clerk.com/docs?utm_source=vercel-template&utm_medium=template_repos&utm_campaign=nextjs_template"
+      href="https://clerk.com/docs?utm_source=orunbase-template&utm_medium=template_repos&utm_campaign=nextjs_template"
       target="_blank"
     >
       <svg

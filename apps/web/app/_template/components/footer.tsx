@@ -2,7 +2,7 @@ export async function Footer() {
   return (
     <footer className="max-w-300 bg-white w-full mx-auto pt-6 border-t border-[#EEEEF0] flex justify-between pb-24">
       <a
-        href="https://clerk.com?utm_source=vercel-template&utm_medium=template_repos&utm_campaign=nextjs_template"
+        href="https://clerk.com?utm_source=orunbase-template&utm_medium=template_repos&utm_campaign=nextjs_template"
         target="_blank"
         className="flex gap-2 font-medium text-[0.8125rem] items-center"
       >
@@ -33,7 +33,7 @@ export async function Footer() {
       <ul className="flex gap-2 ml-auto">
         <li>
           <a
-            href="https://clerk.com/docs?utm_source=vercel-template&utm_medium=template_repos&utm_campaign=nextjs_template"
+            href="https://clerk.com/docs?utm_source=orunbase-template&utm_medium=template_repos&utm_campaign=nextjs_template"
             target="_blank"
             className="flex items-center gap-2 font-medium text-[0.8125rem] rounded-full px-3 py-2 hover:bg-gray-100"
           >
